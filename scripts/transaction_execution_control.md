@@ -37,4 +37,4 @@ define service{
 ```
 *You have to replace parameters of the `check_command` line.*
 
-* Finally, the plugin is configured in Nagios, you just have to restart Nagios service to enable the control.
+* Finally, you restart Nagios service to enable the control.
