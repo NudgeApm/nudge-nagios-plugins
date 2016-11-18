@@ -12,7 +12,7 @@
 # $5: Number of minutes without execution before WARNING nagios status
 # $5: Number of minutes without execution before CRITICAL nagios status
 
-# service URL, this chould be changed in on-prem environments
+# service URL, this should be changed in on-prem environments
 NUDGE_URL="https://monitor.nudge-apm.com"
 
 # authentification
