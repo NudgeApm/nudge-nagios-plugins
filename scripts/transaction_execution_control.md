@@ -2,7 +2,7 @@
 
 This script checks, in an application monitored by [Nudge APM](https://www.nudge-apm.com), if a transaction has been executed recently.
 
-You might need it, for instance, if you need to check the execution of a regularly planified job.
+Use case : check the execution of a regularly planified job.
 
 # Installation
 
@@ -28,7 +28,7 @@ define host {
     address     monitor.nudge-apm.com
     max_check_attempts 10
 }
-define service{
+define service {
     use                 generic-service
     host_name           Nudge APM
     service_description Transaction Control
