@@ -2,7 +2,7 @@
 
 This script checks, in an application monitored by [Nudge APM](https://www.nudge-apm.com), if a transaction has been executed recently.
 
-You should use it if you need to check the execution of a regularly planified job.
+You might need it, for instance, if you need to check the execution of a regularly planified job.
 
 # Installation
 

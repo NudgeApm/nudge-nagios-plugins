@@ -6,8 +6,8 @@
 # Expected parameters are :
 # $1: Nudge login allowed to allowed to view the application
 # $2: Nudge password of user $1
-# $3: Application ID (you can get it with api request https://monitor.nduge-appm.com/api/apps)
-#     warning: this code differs from the probe token
+# $3: Application ID (you can get it with api request https://monitor.nudge-apm.com/api/apps)
+#     warning: this ID differs from the probe token
 # $4: Transaction name to check
 # $5: Number of minutes without execution before WARNING nagios status
 # $5: Number of minutes without execution before CRITICAL nagios status
