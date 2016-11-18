@@ -6,7 +6,7 @@ This reporitory contains several samples of Nagios plugins that grabs metrics fr
 
 You need a Nudge APM account : https://www.nudge-apm.com/.
 
-Other requirements depend on each plugin. Specific documentations for each plugin explains those.
+Other requirements depend on each plugin. Specific documentations for each plugin explains those requirements.
 
 ## Plugins list
 
