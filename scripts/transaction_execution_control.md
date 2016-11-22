@@ -8,7 +8,7 @@ Use case : check the execution of a regularly planified job.
 
 There are several ways to configure this plugins and the best way depends on your Nagios install and configuration.
 This is an example.
-Ó
+
 * First, you have to download [the script](transaction_execution_control.sh) and add it to your Nagios plugins directory (you will have to replace the `/path/to/nagios/plugins` by this path in the next step).
 
 * Then, you add a new command to your Nagios `commands.cfg` file :
