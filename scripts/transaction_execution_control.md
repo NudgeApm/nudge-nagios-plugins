@@ -8,7 +8,7 @@ Use case : check the execution of a regularly planified job.
 
 There are several ways to configure this plugins and the best way depends on your Nagios install and configuration.
 This is an example.
-
+Ó
 * First, you have to download [the script](transaction_execution_control.sh) and add it to your Nagios plugins directory (you will have to replace the `/path/to/nagios/plugins` by this path in the next step).
 
 * Then, you add a new command to your Nagios `commands.cfg` file :
@@ -38,3 +38,13 @@ define service {
 *You have to replace parameters of the `check_command` line.*
 
 * Finally, you restart Nagios service to enable the control.
+
+# Screenshots
+
+<img src="../img/screen-check-tr-ok-1.png" />
+
+<img src="../img/screen-check-tr-ok-2.png" />
+
+<img src="../img/screen-check-tr-crit-1.png" />
+
+<img src="../img/screen-check-tr-crit-2.png" />
