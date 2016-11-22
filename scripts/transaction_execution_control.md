@@ -42,13 +42,13 @@ define service {
 # Screenshots
 
 * Services dashboard with successful control:
-<img src="../img/screen-check-tr-ok-1.png" />
+<kbd><img src="../img/screen-check-tr-ok-1.png" /></kbd>
 
 * Service state with successful control:
-<img src="../img/screen-check-tr-ok-2.png" />
+<kbd><img src="../img/screen-check-tr-ok-2.png" /></kbd>
 
 * Services dashboard with failed control:
-<img src="../img/screen-check-tr-crit-1.png" />
+<kbd><img src="../img/screen-check-tr-crit-1.png" /></kbd>
 
 * Service state with failed control:
-<img src="../img/screen-check-tr-crit-2.png" />
+<kbd><img src="../img/screen-check-tr-crit-2.png" /></kbd>
