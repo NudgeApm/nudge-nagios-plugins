@@ -15,7 +15,7 @@ This is an example.
 ```
 define command {
     command_name check_job
-    command_line /path/to/nagios/plugins/elis_ctrl_final.sh $ARG1$ $ARG2$ $ARG3$ $ARG4$ $ARG5$ $ARG6$
+    command_line /path/to/nagios/plugins/transaction_execution_control.sh $ARG1$ $ARG2$ $ARG3$ $ARG4$ $ARG5$ $ARG6$
 }
 ```
 
