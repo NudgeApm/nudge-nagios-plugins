@@ -36,8 +36,8 @@ define service {
 }
 ```
 You have to replace parameters of the `check_command` line.
-  - The `app_id` parameter is the Nudge APM id of the application that runs the job. This id can be collected from REST API in `/api/apps` query.
-  - The `transaction` parameter is the transaction name of the job to be controlled.
+    - The `app_id` parameter is the Nudge APM id of the application that runs the job. This id can be collected from REST API in `/api/apps` query.
+    - The `transaction` parameter is the transaction name of the job to be controlled.
 
 
 * Finally, you restart Nagios service to enable the control.
