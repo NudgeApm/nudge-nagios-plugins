@@ -35,7 +35,7 @@ define service {
     check_command       check_job![login]![pwd]![app_id]![transaction]![warn_threshold]![crit_threshold]
 }
 ```
-You have to replace parameters of the `check_command` line.
+  You have to replace parameters of the `check_command` line.
   * The `app_id` parameter is the Nudge APM id of the application that runs the job. This id can be collected from REST API in `/api/apps` query.
   * The `transaction` parameter is the transaction name of the job to be controlled.
 
