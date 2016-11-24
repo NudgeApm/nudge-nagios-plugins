@@ -20,23 +20,23 @@ define command {
 ```
 
 * Next, you create a new server configuration file (in your Nagios `servers` directory) with this content:
-```
-define host {
-    use     generic-host
-    host_name   Nudge APM
-    alias       Nudge APM
-    address     monitor.nudge-apm.com
-    max_check_attempts 10
-}
-define service {
-    use                 generic-service
-    host_name           Nudge APM
-    service_description Transaction Control
-    check_command       check_job![login]![pwd]![app_id]![transaction]![warn_threshold]![crit_threshold]
-}
-```
+  ```
+  define host {
+      use     generic-host
+      host_name   Nudge APM
+      alias       Nudge APM
+      address     monitor.nudge-apm.com
+      max_check_attempts 10
+  }
+  define service {
+      use                 generic-service
+      host_name           Nudge APM
+      service_description Transaction Control
+      check_command       check_job![login]![pwd]![app_id]![transaction]![warn_threshold]![crit_threshold]
+  }
+  ```
   You have to replace parameters of the `check_command` line.
-  1. The `app_id` parameter is the Nudge APM id of the application that runs the job. This id can be collected from REST API in `/api/apps` query.
+  * The `app_id` parameter is the Nudge APM id of the application that runs the job. This id can be collected from REST API in `/api/apps` query.
   * The `transaction` parameter is the transaction name of the job to be controlled.
 
 
