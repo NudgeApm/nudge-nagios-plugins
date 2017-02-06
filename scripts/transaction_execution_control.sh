@@ -36,7 +36,7 @@ cookie=`curl -s -X POST "$NUDGE_URL/login/usrpwd" -d "id=$LOGIN&pwd=$PASSWORD" -
 
 # API verify status function
 nudge_status() {
-  API_COMMAND="apps/$APP_ID/rawdata?from=$WARN_THRES"
+  API_COMMAND="apps/$APP_ID/rawdata?from=-5m"
   status_result=`curl -s $NUDGE_URL/api/$API_COMMAND -b "$cookie"|grep "collecte"`
 }
 
