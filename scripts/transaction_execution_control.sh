@@ -10,7 +10,7 @@
 #     warning: this ID differs from the probe token
 # $4: Transaction name to check
 # $5: Number of minutes without execution before WARNING nagios status
-# $5: Number of minutes without execution before CRITICAL nagios status
+# $6: Number of minutes without execution before CRITICAL nagios status
 
 # service URL, this should be changed in on-prem environments
 NUDGE_URL="https://monitor.nudge-apm.com"
@@ -34,6 +34,13 @@ CRIT_THRES="-${6}m"
 # authentication
 cookie=`curl -s -X POST "$NUDGE_URL/login/usrpwd" -d "id=$LOGIN&pwd=$PASSWORD" -i|awk '{if($1=="Set-Cookie:"){c=c $2;}}END{print c;}'`
 
+# API verify status function
+nudge_status() {
+  API_COMMAND="apps/$APP_ID/rawdata?from=$WARN_THRES"
+  status_result=`curl -s $NUDGE_URL/api/$API_COMMAND -b "$cookie"|grep "collecte"`
+}
+
+
 # API query function
 request() {
   # query the API and filter the result (grep) to check if expected transaction is there
@@ -42,16 +49,21 @@ request() {
 }
 
 # Control for warning and critical threashold then echo message and exit with nagios status
-request $WARN_THRES
-if [ "$result" == "" ]; then
-  request $CRIT_THRES
+nudge_status
+if [ "$status_result" != "" ]; then
+  request $WARN_THRES
   if [ "$result" == "" ]; then
-    echo CRICITAL - transaction $TRANSACTION_REQUIRED not launched during last $CRIT_THRES
-    exit 2
+    request $CRIT_THRES
+    if [ "$result" == "" ]; then
+      echo CRICITAL - transaction $TRANSACTION_REQUIRED not launched during last $CRIT_THRES
+      exit 2
+    fi
+    echo WARNING - transaction $TRANSACTION_REQUIRED not launched during last $WARN_THRES
+    exit 1
   fi
-  echo WARNING - transaction $TRANSACTION_REQUIRED not launched during last $WARN_THRES
-  exit 1
 fi
 
 echo OK - transaction $TRANSACTION_REQUIRED launched during last $WARN_THRES
 exit 0
+
+
