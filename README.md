@@ -15,4 +15,9 @@ If you have some batch jobs that should run regularly, you can check their execu
 
 [Documentation](scripts/transaction_execution_control.md)
 
+### apdex_control.sh
+Control your application performance index (APDEX).
+
+[Documentation](scripts/apdex_control.md)
+
 ### More to come ...
