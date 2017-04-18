@@ -31,12 +31,16 @@ CRIT_THRES="0.8"
 
 API_COMMAND="apps/$APP_ID/metrics/summary?metrics=apdex&from=$TIME_FRAME"
 json=`curl -s $NUDGE_URL/api/$API_COMMAND -H "Authorization: Bearer $API_TOKEN"`
+if [[ "$json" == *"error"* ]]; then
+  echo "FAILED TO REQUEST API. API TOKEN MIGHT BE OUTDATED OR REVOKED."
+  exit 2;
+fi
 apdex=${json:9:5}
 if (( $(echo "$apdex < $CRIT_THRES" | bc -l) )); then
-  echo "CRITICAL"
+  echo "APDEX HAS REACHED THE CRITICAL THRESHOLD"
   exit 2
 elif (( $(echo "$apdex < $WARN_THRES" | bc -l) )); then
-  echo "WARNING"
+  echo "APDEX HAS REACHED THE WARNING THRESHOLD"
   exit 1
 fi
 echo "OK"
